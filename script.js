@@ -4,25 +4,41 @@ const bgRemove = document.getElementById('first-bgRemove')
 const sndBgRemove = document.getElementById('second-bgRemove')
 const thirdBgRemove = document.getElementById('third-bgRemove')
 
+
 let amount = 3;
 
+noti.textContent = amount
+
+
+const takeAmount = () => {
+    if (amount > 0 ) {
+        amount--
+        noti.textContent = amount
+    } else {
+         return
+}
+}
+
+
 clearNoti.onclick = () => {
-    noti.textContent = 0 ;
+    noti.textContent = amount = 0
     bgRemove.classList.remove('bg-Lightgrayishblue1');
     sndBgRemove.classList.remove('bg-Lightgrayishblue1');
     thirdBgRemove.classList.remove('bg-Lightgrayishblue1');
 }
 
+
 bgRemove.onclick = () => {
-    noti.textContent = amount -= 1
-    amount;
+    takeAmount()
     bgRemove.classList.remove('bg-Lightgrayishblue1')
 }
+
 sndBgRemove.onclick = () => {
-    noti.textContent = amount -= 1
+    takeAmount()
     sndBgRemove.classList.remove('bg-Lightgrayishblue1')
 }
+
 thirdBgRemove.onclick = () => {
-    noti.textContent = amount -= 1
+    takeAmount()
     thirdBgRemove.classList.remove('bg-Lightgrayishblue1')
 }
